@@ -1,0 +1,5 @@
+name: Greetings
+type: module
+description: 'Say hello to people'
+package: Greetings
+core: 8.x
