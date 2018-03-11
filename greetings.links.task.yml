@@ -1,0 +1,22 @@
+# Define the 'local' links for the module
+
+greetings.settings_tab:
+  route_name: greetings.greetings_settings
+  title: Settings
+  base_route: greetings.greetings_settings
+
+greetings.view:
+  route_name: entity.greetings.canonical
+  base_route: entity.greetings.canonical
+  title: View
+
+greetings.page_edit:
+  route_name: entity.greetings.edit_form
+  base_route: entity.greetings.canonical
+  title: Edit
+
+greetings.delete_confirm:
+  route_name:  entity.greetings.delete_form
+  base_route:  entity.greetings.canonical
+  title: Delete
+  weight: 10
