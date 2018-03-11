@@ -1,0 +1,11 @@
+view contact entity:
+  title: 'View Greetings entity'
+add contact entity:
+  title: 'Add Greetings entity'
+edit contact entity:
+  title: 'Edit Greetings Entity'
+delete contact entity:
+  title: 'Delete Greetings entity'
+administer contact entity:
+  title: 'Administer Greetings entity'
+  restrict access: TRUE
