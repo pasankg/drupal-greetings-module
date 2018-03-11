@@ -22,10 +22,10 @@ class GreetingsListBuilder extends EntityListBuilder {
    */
   public function render() {
     $build['description'] = [
-      '#markup' => $this->t('Greetings Content Entity implements a Greetings model. These greetings are fieldable entities. You can manage the fields on the <a href="@adminlink">Greetings admin page</a>.', array(
+      '#markup' => $this->t('Greetings Content Entity implements a Greetings model. These greetings are fieldable entities. You can manage the fields on the <a href="@adminlink">Greetings admin page</a>.', [
         '@adminlink' => Drupal::urlGenerator()
           ->generateFromRoute('entity.greetings.settings'),
-      )),
+      ]),
     ];
 
     $build += parent::render();

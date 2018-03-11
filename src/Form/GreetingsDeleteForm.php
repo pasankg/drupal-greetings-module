@@ -3,6 +3,7 @@
 namespace Drupal\greetings\Form;
 
 use Drupal\Core\Entity\ContentEntityDeleteForm;
+
 /**
  * Provides a form for deleting a greetings entity.
  *
