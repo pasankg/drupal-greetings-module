@@ -1,0 +1,58 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in several places; e.g. links, redirects, and local
+# actions.
+entity.greetings.canonical:
+  path: '/greetings/{greetings}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the greetings entity
+    _entity_view: 'greetings'
+    _title: 'Greetings Content'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'greetings.view'
+
+entity.greetings.collection:
+  path: '/greetings/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the greetings entity.
+    _entity_list: 'greetings'
+    _title: 'Greetings List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'administer greetings entity'
+
+entity.greetings.add:
+  path: '/greetings/add'
+  defaults:
+  # Calls the form.add controller, defined in the greetings entity.
+    _entity_form: greetings.add
+    _title: 'Add Greetings'
+  requirements:
+    _entity_create_access: 'greetings'
+
+entity.greetings.edit_form:
+  path: '/greetings/{greetings}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the greetings entity.
+    _entity_form: greetings.edit
+    _title: 'Edit Greetings'
+  requirements:
+    _entity_access: 'greetings.edit'
+
+entity.greetings.delete_form:
+  path: '/greetings/{greetings}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the greetings entity.
+    _entity_form: greetings.delete
+    _title: 'Delete Greetings'
+  requirements:
+    _entity_access: 'greetings.delete'
+
+entity.greetings.settings:
+  path: 'admin/structure/greetings_settings'
+  defaults:
+    _form: '\Drupal\greetings\Form\GreetingsSettingsForm'
+    _title: 'Greetings Settings'
+  requirements:
+    _permission: 'administer greetings entity'
