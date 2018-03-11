@@ -232,9 +232,9 @@ class Greetings extends ContentEntityBase implements GreetingsInterface {
     // Name field for the greetings.
     // We set display options for the view as well as the form.
     // Users with correct privileges can change the view and edit configuration.
-    $fields['name'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Name'))
-      ->setDescription(t('The name of the Greetings entity.'))
+    $fields['to'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('To'))
+      ->setDescription(t('The name of the person to greet.'))
       ->setSettings([
         'default_value' => '',
         'max_length' => 255,
