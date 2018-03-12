@@ -88,8 +88,6 @@ use Drupal\user\UserInterface;
  *   fieldable = TRUE,
  *   entity_keys = {
  *     "id" = "id",
- *     "label" = "name",
- *     "greeting" = "greeting",
  *     "uuid" = "uuid"
  *   },
  *   links = {
@@ -217,23 +215,14 @@ class Greetings extends ContentEntityBase implements GreetingsInterface {
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
 
-    // Standard field, used as unique if primary index.
-    $fields['id'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('ID'))
-      ->setDescription(t('The ID of the Greetings entity.'))
-      ->setReadOnly(TRUE);
-
-    // Standard field, unique outside of the scope of the current project.
-    $fields['uuid'] = BaseFieldDefinition::create('uuid')
-      ->setLabel(t('UUID'))
-      ->setDescription(t('The UUID of the Greetings entity.'))
-      ->setReadOnly(TRUE);
+    // Can skip defining id and uuid fields when we call parent method.
+    $fields = parent::baseFieldDefinitions($entity_type);
 
     // Name field for the greetings.
     // We set display options for the view as well as the form.
     // Users with correct privileges can change the view and edit configuration.
-    $fields['to'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('To'))
+    $fields['recipient'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Recipient'))
       ->setDescription(t('The name of the person to greet.'))
       ->setSettings([
         'default_value' => '',
@@ -272,13 +261,12 @@ class Greetings extends ContentEntityBase implements GreetingsInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    // Gender field for the greetings.
+    // Greeting type field for the greetings.
     // ListTextType with a drop down menu widget.
-    // The values shown in the menu are 'male' and 'female'.
     // In the view the field content is shown as string.
     // In the form the choices are presented as options list.
     $fields['greeting_type'] = BaseFieldDefinition::create('list_string')
-      ->setLabel(t('Gender'))
+      ->setLabel(t('Greeting Type'))
       ->setDescription(t('The greeting type of the Greetings entity.'))
       ->setSettings([
         'allowed_values' => [

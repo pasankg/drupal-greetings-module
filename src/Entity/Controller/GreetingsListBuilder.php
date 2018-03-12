@@ -42,7 +42,7 @@ class GreetingsListBuilder extends EntityListBuilder {
    */
   public function buildHeader() {
     $header['id'] = $this->t('Greeting ID');
-    $header['to'] = $this->t('Greet To');
+    $header['recipient'] = $this->t('Recipient');
     $header['greeting'] = $this->t('Greeting Message');
     $header['greeting_type'] = $this->t('Greeting Type');
     return $header + parent::buildHeader();
@@ -54,7 +54,7 @@ class GreetingsListBuilder extends EntityListBuilder {
   public function buildRow(EntityInterface $entity) {
     /* @var $entity \Drupal\greetings\Entity\Greetings */
     $row['id'] = $entity->id();
-    $row['to'] = $entity->link();
+    $row['recipient'] = $entity->link();
     $row['greeting'] = $entity->greeting->value;
     $row['greeting_type'] = $entity->greeting_type->value;
     return $row + parent::buildRow($entity);
