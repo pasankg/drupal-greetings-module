@@ -15,7 +15,7 @@ entity.greetings.canonical:
     _admin_route: false
 
 entity.greetings.collection:
-  path: '/greetings/list'
+  path: '/admin/greetings/list'
   defaults:
   # Calls the list controller, defined in the annotation of the greetings entity.
     _entity_list: 'greetings'
@@ -32,9 +32,11 @@ entity.greetings.add:
     _title: 'Add Greetings'
   requirements:
     _entity_create_access: 'greetings'
+  options:
+    _admin_route: true
 
 entity.greetings.edit_form:
-  path: '/greetings/{greetings}/edit'
+  path: '/admin/greetings/{greetings}/edit'
   defaults:
   # Calls the form.edit controller, defined in the greetings entity.
     _entity_form: greetings.edit
@@ -43,7 +45,7 @@ entity.greetings.edit_form:
     _entity_access: 'greetings.edit'
 
 entity.greetings.delete_form:
-  path: '/greetings/{greetings}/delete'
+  path: '/admin/greetings/{greetings}/delete'
   defaults:
     # Calls the form.delete controller, defined in the greetings entity.
     _entity_form: greetings.delete
@@ -52,7 +54,7 @@ entity.greetings.delete_form:
     _entity_access: 'greetings.delete'
 
 entity.greetings.settings:
-  path: 'admin/structure/greetings_settings'
+  path: '/admin/structure/greetings_settings'
   defaults:
     _form: '\Drupal\greetings\Form\GreetingsSettingsForm'
     _title: 'Greetings Settings'
