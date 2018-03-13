@@ -96,7 +96,7 @@ use Drupal\user\UserInterface;
  *     "delete-form" = "/greetings/{greetings}/delete",
  *     "collection" = "/greetings/list"
  *   },
- *   field_ui_base_route = "greetings.greetings_settings",
+ *   field_ui_base_route = "entity.greetings.settings",
  * )
  *
  * The 'links' above are defined by their path.

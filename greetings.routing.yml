@@ -11,6 +11,8 @@ entity.greetings.canonical:
   requirements:
   # Calls the access controller of the entity, $operation 'view'
     _entity_access: 'greetings.view'
+  options:
+    _admin_route: false
 
 entity.greetings.collection:
   path: '/greetings/list'

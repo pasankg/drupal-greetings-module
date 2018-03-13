@@ -1,12 +1,13 @@
 # Define the menu links for this module
-
+# Adds links under admin menu
 entity.greetings.collection:
   title: 'Greetings Listing'
   route_name: entity.greetings.collection
   description: 'List Greetings'
   weight: 10
+  parent: system.admin_content
 entity.greetings.admin.structure.settings:
-  title: Contact Settings
+  title: 'Greeting Settings'
   description: 'Configure greetings entity'
   route_name:  entity.greetings.settings
   parent: system.admin_structure
