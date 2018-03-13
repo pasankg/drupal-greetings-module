@@ -41,7 +41,7 @@ class GreetingsListBuilder extends EntityListBuilder {
    * and inserts the 'edit' and 'delete' links as defined for the entity type.
    */
   public function buildHeader() {
-    // $header['id'] = $this->t('Greeting ID');
+    // $header['id'] = $this->t('Greeting ID');.
     $header['recipient'] = $this->t('Recipient');
     $header['greeting'] = $this->t('Greeting Message');
     $header['greeting_type'] = $this->t('Greeting Type');
@@ -53,9 +53,11 @@ class GreetingsListBuilder extends EntityListBuilder {
    */
   public function buildRow(EntityInterface $entity) {
     /* @var $entity \Drupal\greetings\Entity\Greetings */
-    // $row['id'] = $entity->id();
-    $row['recipient'] = $entity->toLink($entity->recipient->value); // links to view operator
-    // $row['recipient'] = $entity->recipient->value;
+    // $row['id'] = $entity->id();.
+    // $row['recipient'] = $entity->recipient->value;.
+    // links to view operator.
+    $row['recipient'] = $entity->toLink($entity->recipient->value);
+
     $row['greeting'] = $entity->greeting->value;
     $row['greeting_type'] = $entity->greeting_type->value;
     return $row + parent::buildRow($entity);

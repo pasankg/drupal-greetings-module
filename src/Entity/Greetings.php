@@ -82,6 +82,9 @@ use Drupal\user\UserInterface;
  *       "delete" = "Drupal\greetings\Form\GreetingsDeleteForm",
  *     },
  *     "access" = "Drupal\greetings\GreetingsAccessControlHandler",
+ *     "route_provider" = {
+ *       "html" = "Drupal\Core\Entity\Routing\AdminHtmlRouteProvider",
+ *     },
  *   },
  *   base_table = "greetings",
  *   admin_permission = "administer greetings entity",
@@ -92,9 +95,10 @@ use Drupal\user\UserInterface;
  *   },
  *   links = {
  *     "canonical" = "/greetings/{greetings}",
- *     "edit-form" = "/greetings/{greetings}/edit",
- *     "delete-form" = "/greetings/{greetings}/delete",
- *     "collection" = "/greetings/list"
+ *     "edit-form" = "/admin/greetings/{greetings}/edit",
+ *     "delete-form" = "/admin/greetings/{greetings}/delete",
+ *     "collection" = "/admin/greetings/list",
+ *     "add-form" = "/admin/greetings/add",
  *   },
  *   field_ui_base_route = "entity.greetings.settings",
  * )

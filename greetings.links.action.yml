@@ -2,7 +2,10 @@
 
 entity.greetings_action_add:
   # Which route will be called by the link
-  route_name: entity.greetings.add
+  # After route provider is used, the route names are auto generated
+  # entity.<entity name>.<link template name> as in the Entity annotation
+  # (These are the links appearing in blue buttons)
+  route_name: entity.greetings.add_form
   title: 'Add Greeting'
 
   # Where will the link appear, defined by route name.

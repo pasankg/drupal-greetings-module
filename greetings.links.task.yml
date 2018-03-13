@@ -1,9 +1,6 @@
 # Define the 'local' links for the module
-# Adds links under admin
-greetings.settings_tab:
-  route_name: entity.greetings.settings
-  title: Settings
-  base_route: entity.greetings.settings
+# Adds links under entity canonical page
+# e.g http://127.0.0.1/greetings/{id}
 
 greetings.view:
   route_name: entity.greetings.canonical
@@ -19,9 +16,3 @@ greetings.delete_confirm:
   route_name:  entity.greetings.delete_form
   base_route:  entity.greetings.canonical
   title: Delete
-  weight: 10
-
-greetings.collection_tab:
-  route_name: entity.greetings.collection
-  title: Greetings
-  base_route: system.admin_content
